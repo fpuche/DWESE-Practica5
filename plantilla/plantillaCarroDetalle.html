@@ -1,0 +1,70 @@
+<!-- //sesion://       <?php
+       //session_start();
+ 
+       if (isset($_SESSION["__cesta"])) {
+           $cesta = $_SESSION["__cesta"];
+           ?>
+-->
+<!--  {sesion}   -->
+<tbody>
+    <!-- //foreach://     <?php
+                   foreach ($cesta as $key => $linea) {
+                       ?>
+    -->
+    <!--    {foreach}  -->
+    <tr>
+        <td class="cart_product">
+            <!-- //foto://         <?php echo $modelo->get($linea->getIdProducto())->getFoto(); ?>
+            -->
+            <img src='fotos/{foto}'  alt="" width="75px"/>
+        </td>
+        <td class="cart_description">
+
+            <!-- //nombre://         <?php echo $modelo->get($linea->getIdProducto())->getNombreProducto(); ?>
+            -->             
+            <h4>{nombre}</h4>
+            <!-- //descripcion://         <?php echo $modelo->get($linea->getIdProducto())->getDescripcionProducto(); ?>
+            -->                                     
+            <p>{descripcion}</p>
+        </td>
+        <td class="cart_price">
+            <!-- //precio://         <?php echo $modelo->get($linea->getIdProducto())->getPrecioProducto(); ?>
+            -->                                      
+            <p>{precio}</p>
+        </td>
+        <td class="cart_quantity">
+            <div class="cart_quantity_button">
+                <!-- //id://         <?php echo $modelo->get($linea->getIdProducto())->getId(); ?>
+                -->                                   
+                <a class="cart_quantity_up" href="producto/phpcartadd.php?id={id}&return=1"> + </a>
+                <!-- //cantidad://         <?php echo $linea->getCantidad(); ?>
+                -->                                        
+                <input class="cart_quantity_input" type="text" name="quantity" value="{cantidad}" autocomplete="off" size="2">
+                <a class="cart_quantity_down" href="producto/phpcartsup.php?id={id}&return=1"> - </a>
+            </div>
+        </td>
+        <td class="cart_total cart_delete">
+            <a class="cart_quantity_delete" href="producto/phpcartdel.php?id={id}&return=1"><i class="fa fa-times"></i></a>
+
+        </td>
+
+        <!--                                <td class="cart_delete">
+                                            <a class="cart_quantity_delete" href="producto/phpcartdel.php?id=<?php echo $modelo->get($linea->getIdProducto())->getId(); ?>"><i class="fa fa-times"></i></a>
+                                        </td>-->
+    </tr>
+    <!-- //cierre1://                                           
+    <?php
+            
+        }
+        ?>
+    -->                              
+    <!--    {cierre1}   -->
+
+    <!--  </tbody> -->
+    <!-- //cierre2://                           
+    <?php
+}
+//                        session_destroy();
+?>
+    -->                         
+    <!--{cierre2}-->
